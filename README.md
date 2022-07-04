@@ -39,6 +39,8 @@ OTkzMjA3ODY2NzE2NjAyNDM4.GCxHYT.9XLADCbQYNtsg2C9MrRDSjqtIMzDnTMKcGmhjU
 ### Installation & usage:
 1. Download and export the files.
 
-2. run the command `python main.py` in that directory using cmd/terminal,
+2. Paste your combo in tokens.txt,
 
-3. Paste your combo in tokens.txt,
+3. run the script by running the command `python main.py` in that directory using cmd/terminal,
+
+
