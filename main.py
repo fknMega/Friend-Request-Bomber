@@ -64,4 +64,4 @@ for line in f:
           print('- Rate Limit/Verification Required: ' + token)
     
 
-# buzi vagyok :DDDDDDDDDD
+
