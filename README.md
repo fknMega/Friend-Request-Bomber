@@ -22,6 +22,7 @@ This is my first tool using python, don't judge.
 + Combo Support
 ```
 
+<h1 align="center"><img src="https://media.discordapp.net/attachments/976394322314403840/993806074471792640/firefox_lVBe2vub5C.gif"><h1>
 
 
 
