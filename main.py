@@ -5,7 +5,7 @@ import requests
 user = input("Enter the tag (username#1234): ")
 combotype = input("Enter a number to select combo type, 1 for combo (user:pass:token) or 2 for normal (token): ")
 
-def get_cookies_and_send_friend_request(token, username, discriminator):
+def send_friend_request(token, username, discriminator):
 
     r = requests.Session()
     # gets cookies (100% delicious 😋)
