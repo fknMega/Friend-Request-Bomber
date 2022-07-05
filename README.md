@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/Python-3.9-informational.svg">
   </a>
   <a href="https://github.com/AstraaDev">
-    <img src="https://img.shields.io/github/downloads/fknMega/Friend-Request-Bomber/total.svg">
+    <img src="">
   </a>
   <a href="https://github.com/fknMega">
     <img src="https://komarev.com/ghpvc/?username=fknMega">
