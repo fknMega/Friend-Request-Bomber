@@ -18,11 +18,10 @@ def send_friend_request(token, username, discriminator):
     
 
     #print the response
-    print('token: ' + token + ' code: ' + str(res.status_code) + ' message: ' +res.text)
 
     
     
-    return True
+    return res.status_code
 
 
 #run the send_friend_request function for every line in the text file
@@ -37,7 +36,14 @@ for line in f:
      else:
         token = line.replace("\n", "")
 
-     send_friend_request(token, username, discriminator)
+     res = send_friend_request(token, username, discriminator)
 
+     if res == 204:
+       print('+ Friend Req sent from: ' + token)
+     else:
+       if res == 401:
+          print('- Token is dead: ' + token)
+       else:
+          print('- Rate Limit/Verification Required: ' + token)
     
 
