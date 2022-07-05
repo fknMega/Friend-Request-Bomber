@@ -1,3 +1,19 @@
+<h1 align="center">Friend Request Bomber</h1>
+<p align="center">
+  <a href="https://github.com/Rdmo1/DisRo-Multi-Tool/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-important">
+  </a>
+  <a href="https://www.python.org">
+    <img src="https://img.shields.io/badge/Python-3.9-informational.svg">
+  </a>
+  <a href="https://github.com/AstraaDev">
+    <img src="https://img.shields.io/github/downloads/fknMega/Friend-Request-Bomber/total.svg">
+  </a>
+  <a href="https://github.com/fknMega">
+    <img src="https://komarev.com/ghpvc/?username=fknMega">
+  </a>
+</p>
+
 ### **This tool is not skidded, made it very easily.**
 This is my first tool using python, don't judge.
 ```diff
@@ -42,5 +58,4 @@ OTkzMjA3ODY2NzE2NjAyNDM4.GCxHYT.9XLADCbQYNtsg2C9MrRDSjqtIMzDnTMKcGmhjU
 2. Paste your combo in tokens.txt,
 
 3. run the script by running the command `python main.py` in that directory using cmd/terminal,
-
 
