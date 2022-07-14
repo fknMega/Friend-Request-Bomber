@@ -25,7 +25,12 @@ This is my first tool using python, don't judge.
   </a>
 </p>
 
-<h1 align="center"><img src="https://media.discordapp.net/attachments/976394322314403840/993806074471792640/firefox_lVBe2vub5C.gif"><h1>
+<p align="center">
+<a href="https://github.com/fknMega">
+    <img src="https://media.discordapp.net/attachments/976394322314403840/993806074471792640/firefox_lVBe2vub5C.gif">
+  </a>
+  
+  </p>
 
 
 
