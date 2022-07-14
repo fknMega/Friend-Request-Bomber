@@ -9,9 +9,6 @@
   <a href="https://github.com/AstraaDev">
     <img src="https://img.shields.io/github/downloads/fknMega/Friend-Request-Bomber/total.svg">
   </a>
-  <a href="https://github.com/fknMega">
-    <img src="https://komarev.com/ghpvc/?username=fknMega">
-  </a>
 </p>
 
 ### **This tool is not skidded, made it very easily.**
