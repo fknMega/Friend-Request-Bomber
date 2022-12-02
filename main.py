@@ -1,67 +1,71 @@
-#this was made by fknMega on github
+# This was made by fknMega on github
+# Code upgraded by TKirishima
+
+# Imports
 import requests
 
 
-user = input("Enter the tag (username#1234): ")
-combotype = input("Enter a number to select combo type, 1 for combo (user:pass:token) or 2 for normal (token): ")
+def send_friend_request(token: str, username: str, discriminator: str) -> int:
 
-def send_friend_request(token, username, discriminator):
+    """ Send a friend request by information """
 
+
+    # Gets cookies 
     r = requests.Session()
-    # gets cookies (100% delicious 😋)
+
     url = "https://discord.com/api/v9/experiments"
-    k = r.get(url)
+    r.get(url)
     
-    # sends sex request
+    # Sends friend request
     url = "https://discord.com/api/v9/users/@me/relationships"
-    headers = {"accept": "/",
-    "accept-encoding": "gzip, deflate, br",
-    "accept-language": "en-US,en-CH;q=0.9,en-GB;q=0.8",
-    "authorization": token,
-    "content-length": "0",
-    "origin": "https://discord.com",
-    "referer": "https://discord.com/channels/@me",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.669 Chrome/91.0.4472.164 Electron/13.6.6 Safari/537.36",
-    "x-debug-options": "bugReporterEnabled",
-    "x-discord-locale": "hu",
-    "x-super-properties": "eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiRGlzY29yZCBDbGllbnQiLCJyZWxlYXNlX2NoYW5uZWwiOiJjYW5hcnkiLCJjbGllbnRfdmVyc2lvbiI6IjEuMC42NjkiLCJvc192ZXJzaW9uIjoiMTAuMC4xOTA0MyIsIm9zX2FyY2giOiJ4NjQiLCJzeXN0ZW1fbG9jYWxlIjoiZW4tVVMiLCJjbGllbnRfYnVpbGRfbnVtYmVyIjoxMzMwOTgsImNsaWVudF9ldmVudF9zb3VyY2UiOm51bGx9"
+
+    headers = {
+        "accept": "/",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en-CH;q=0.9,en-GB;q=0.8",
+        "authorization": token,
+        "content-length": "0",
+        "origin": "https://discord.com",
+        "referer": "https://discord.com/channels/@me",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.669 Chrome/91.0.4472.164 Electron/13.6.6 Safari/537.36",
+        "x-debug-options": "bugReporterEnabled",
+        "x-discord-locale": "hu",
+        "x-super-properties": "eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiRGlzY29yZCBDbGllbnQiLCJyZWxlYXNlX2NoYW5uZWwiOiJjYW5hcnkiLCJjbGllbnRfdmVyc2lvbiI6IjEuMC42NjkiLCJvc192ZXJzaW9uIjoiMTAuMC4xOTA0MyIsIm9zX2FyY2giOiJ4NjQiLCJzeXN0ZW1fbG9jYWxlIjoiZW4tVVMiLCJjbGllbnRfYnVpbGRfbnVtYmVyIjoxMzMwOTgsImNsaWVudF9ldmVudF9zb3VyY2UiOm51bGx9"
     }
+
     body = {"username": username, "discriminator": discriminator}
+
+
     
     # Send the friend request
     res = r.post(url, headers=headers, json=body)
     
 
-    #print the response
-
-    
-    
+    # Return the response status
     return res.status_code
 
 
-#run the send_friend_request function for every line in the text file
-f = open("tokens.txt", "r")
-for line in f:
-     username = user.split("#")[0]
-     discriminator = user.split("#")[1]
-     token = ""
-     if combotype == "1":
-        token = line.split(":")[2].replace("\n", "")
-     else:
-        token = line.replace("\n", "")
 
-     res = send_friend_request(token, username, discriminator)
+def main() -> None:
 
-     if res == 204:
-       print('+ Friend Req sent from: ' + token)
-     else:
-       if res == 401:
-          print('- Token is dead: ' + token)
-       else:
-          print('- Rate Limit/Verification Required: ' + token)
-    
+    """ Main program"""
+
+    username, discriminator = input("Enter the tag (username#1234): ").split("#")
+    with open("tokens.txt", "r") as f:
+        for line in f:
+            token = line.split(":")[-1].rstrip("\n")
+            res = send_friend_request(token, username, discriminator)
+
+            if res == 204:
+                print('\033[32m+\033[0m Friend Req sent from: ' + token)
+            elif res == 401:
+                print('\033[31m-\033[0m Token is dead: ' + token)
+            else:
+                print('\033[31m-\033[0m Rate Limit/Verification Required: ' + token)
 
 
+if __name__ == '__main__':
+    main()
